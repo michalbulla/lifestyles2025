@@ -1,0 +1,6 @@
+.funds {
+  a {
+    @include link-underline-on-hover;
+    color: $color-text;
+  }
+}

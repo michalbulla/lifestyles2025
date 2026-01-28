@@ -131,6 +131,13 @@ documentReady(() => {
 
 });
 
+$(".start-btn").click(function(){
+  event.preventDefault();
+  $('html, body').animate({
+      scrollTop: $(".intro").offset().top
+  }, 600);
+});
+
 // ************************************************************
 // The code below needs to be translated into vanilla JS if needed
 // ************************************************************

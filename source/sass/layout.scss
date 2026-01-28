@@ -1,0 +1,517 @@
+// MAIN ELEMENTS ---------------------
+
+body {
+  margin: 0;
+  background: $color-brand-three;
+}
+
+
+.page-wrap {
+  background-color: $color-white;
+}
+
+.container {
+  width: 100%;
+
+  @media #{$large-desktop} {
+    width: 1100px;
+  }
+
+  &.narrow {
+    @media #{$large-desktop} {
+      width: 970px;
+    }
+  }
+}
+
+.content-wrap {
+  background-color: $color-white;
+}
+
+.page {
+  background-color: rgba(#f3f3f3, .7);
+  padding-top: 2em;
+}
+
+.content {
+  display: flex;
+}
+
+.main-content {
+  flex: 1;
+  min-height: 100px;
+  max-width: 100%;
+}
+
+.sidebar {
+  width: 243px;
+  margin-left: 30px;
+
+  @media #{$mobile} {
+    display: none;
+  }
+}
+
+// Main Content Blocks 
+
+.text .container {
+  padding: 0 10em 1em;
+
+  @media #{$mobile} {
+    padding: 0 1em 1em 1em;
+  }
+
+  p {
+    line-height: 1.55em;
+  }
+}
+
+.main-content .text:first-of-type .container {
+  background-image: url(/img/slimak.png);
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: 230px;
+
+}
+
+.images-wrap {
+  text-align: center;
+  
+  &:nth-child(2n + 1) {
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%),  url(/img/bg-image-r.jpg);
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .images {
+    margin-bottom: 2em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .image {
+      width: 100%;
+      max-width: 350px;
+      padding-bottom: 53%;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 1.5%;
+      border: 5px solid rgba($color-white, .6);
+      
+      @media #{$mobile} {
+        margin: .5em auto;
+        padding-bottom: 34%;
+      }
+
+      @media #{$small-mobile} {
+        padding-bottom: 56%;
+      }
+      
+      @media #{$not-mobile} {
+        width: 32%;
+        padding-bottom: 21%;
+      }
+
+      img {
+        max-width: 101%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: all .5s;
+        
+        &:hover {
+          @media #{$not-mobile} {
+            width: 110%;
+            max-width: 110%;
+          }
+        }
+      }
+    }
+
+    &.one {
+      justify-content: center;
+
+      .image {
+        @media #{$not-mobile} {
+          width: 100%;
+          padding-bottom: 33%;
+        }
+      }
+    }
+  }
+}
+.gallery-wrap {
+  height: 500px;
+
+  @media #{$mobile} {
+    height: 400px;
+  }
+}
+
+.text-two-columns {
+  padding-bottom: 2em;
+
+  @media #{$not-mobile} {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  div {
+    flex: 0 0 45%;
+    text-align: center;
+  }
+}
+
+// Header ---------------------------------------------------------------------
+
+header {
+  background-color: #f3f3f3;
+
+  @media #{$mobile} {
+    background-repeat: repeat;
+  }
+
+  .header-phone {
+    color: $color-white;
+    font-size: 1.5em;
+    padding: .5em;
+    display: inline-block;
+  }
+
+  .header-container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    z-index: 100;
+  }
+
+  .logo {
+    flex: 0 0 155px;
+    display: block;
+
+    @media #{$mobile} {
+      flex: 0 0 200px;
+      margin: 0 0 0 15px;
+    }
+
+    .logo-subpage {
+      display: block;
+    }
+
+    .logo-homepage {
+      display: none;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .links {
+    height: 56px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    @media #{$mobile} {
+      display: none;
+    }
+
+    a {
+      @include link-underline-on-hover;
+      display: block;
+      color: $color-white;
+      font-weight: bold;
+      padding: 1.05em 1em;
+      border-right: 1px solid rgba($color-white, .2);
+    }
+  }
+
+  .main-nav {
+
+  }
+
+  .header-block {
+    height: 110px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 106;
+    align-items: center;
+
+    @media #{$mobile} {
+      height: 120px;
+      background: none;
+    }
+
+    @media #{$not-mobile} {
+
+    }
+  }
+}
+
+.sr-only {
+  text-align: center;
+  font-size: 1em;
+  color: $color-white !important;
+  background-color: rgba(#000, .7);
+  display: block;
+  border-radius: 5px;
+  padding: .3em 1em;
+  width: 250px;
+}
+
+// Hero 
+
+.hero-section {
+  .hero {
+    display: flex;
+    height: 540px;
+    justify-content: space-between;
+    padding: 2em 0;
+
+    @media #{$mobile} {
+      flex-direction: column;
+      height: auto;
+    }
+  }
+
+  .hero-image {
+    flex: 0 0 30%;
+    margin-left: 30px;
+    text-align: center;
+
+    @media #{$mobile} {
+      order: -1;
+      margin-left: 0;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  .hero-info {
+    padding-right: 30px;
+
+    @media #{$mobile} {
+      padding-right: 0;
+    }
+
+    p {
+      font-size: 1.6em;
+      line-height: 1.6;
+    }
+  }
+}
+
+// Intro {
+.intro-section {
+  background-color: rgba(243, 243, 243, 0.7);
+  
+  .intro {
+    padding: 2em 0;
+    text-align: center;
+
+    ul {
+      list-style: none;
+    }
+
+    p,
+    ul {
+      font-size: 1.3em;
+    }
+  }
+}
+
+// Advantages
+
+.advantages-section {
+  h2 {
+    font-size: 3em;
+    text-align: center;
+    font-weight: normal;
+  }
+
+  .advantages {
+    padding: 4em 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media #{$mobile} {
+      display: block;
+    }
+
+    .advantage {
+      display: flex;
+      align-items: flex-start;
+      flex: 0 0 45%;
+      margin-bottom: 2em;
+
+      img {
+        max-width: 50px;
+        margin-right: 1em;
+      }
+
+      h3 {
+        font-size: 1.3em;
+        margin: .4em 0 0;
+        line-height: 1.4;
+      }
+    }
+  }
+}
+
+// Ingredients 
+.ingredients-section {
+  background-color: rgba(#277225, 1);
+  padding: 1.5em 0 3em;
+
+  h2 {
+    color: $color-white;
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 1.5em;
+    font-weight: normal;
+  }
+
+  .ingredients {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+
+    @media #{$mobile} {
+      display: block;
+      margin: 0;
+    }
+
+    div {
+      flex: 0 0 31%;
+      margin: 0 .5em 2em;
+      padding: 1.5em 1.5em 0;
+
+      @media #{$mobile} {
+        padding: 1.5em;
+      }
+
+      &:nth-child(2n + 1) {
+        background-color: rgba($color-white, .1);
+      }
+    }
+  }
+
+  p {
+    color: rgba($color-white, .85);
+    font-size: 1.125em;
+  }
+
+  h3 {
+    margin-top: 0;
+    color: $color-white;
+  }
+
+  img {
+    float: left;
+    margin: 0 1.5em 1em 0;
+    width: 110px;
+  }
+}
+
+// Sidebar --------------------------------------------------------------------
+
+.sidebar {}
+
+// Footer ---------------------------------------------------------------------
+
+footer {
+  background: linear-gradient($color-brand-one, $color-brand-three );
+
+  p {
+    font-size: 1em;
+  }
+
+  .footer-block {
+    justify-content: space-between;
+    padding-top: 2em;
+
+    @media #{$not-mobile} {
+      display: flex;
+    }
+  }
+
+ 
+  h2 {
+    color: rgba($color-white, .95);
+    margin-top: 0;
+
+    @media #{$mobile} {
+      margin-top: 2em;
+    }
+  }
+
+  a,
+  a:hover,
+  a:focus,
+  ul {
+    color: rgba($color-white, .75);
+  }
+
+  h2,
+  .phone,
+  .email a {
+    @include font-secondary;
+    font-size: 1.15em;
+    color: $color-white;
+  }
+
+  .phone {
+    margin-bottom: .4em;
+
+    &:before {
+      content: '\f098';
+      font-family: 'FontAwesome';
+      display: block;
+      float: left;
+      margin-right: .5em;
+      font-size: 1.1em;
+    }
+  }
+
+  .email {
+    margin-bottom: .4em;
+
+    &:before {
+      content: '\f0e0';
+      font-family: 'FontAwesome';
+      display: block;
+      float: left;
+      margin-right: .5em;
+      font-size: 1.3em;
+    }
+  }
+
+  .copyright {
+    font-size: .87em;
+  }
+
+  .fa-facebook-official {
+    font-size: 2em;
+  }
+
+  a {
+    @include link-underline-on-hover;
+  }
+
+  ul {
+    margin-left: 1em;
+    padding-left: 0;
+
+    li {
+      padding: .3em 0;
+    }
+  }
+}

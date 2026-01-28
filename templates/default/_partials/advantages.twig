@@ -1,0 +1,15 @@
+{% if entry.vyhody %}
+  <section class="advantages-section">
+    <div class="container">
+      <h2>Účinky na zdravie</h2>
+      <div class="advantages">
+        {% for advantage in entry.vyhody %}
+          <div class="advantage">
+            <img src="/img/check.png" alt="">
+            <h3>{{ advantage.vyhody }}</h3>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}

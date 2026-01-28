@@ -1,34 +1,15 @@
-<div id="page">
-  <div id="crumbs" class="hidden md:block">
-    {% block crumbs %}
-      {% include '_partials/nav/crumbs' %}
-    {% endblock %}
-  </div>
-
-  <div id="content" class="flex gap-8 justify-items-start">
-    <div id="main-content-start" class="flex-grow max-w-full">
+<div class="page">
+  <div class="content">
+    <div class="main-content" id="main-content-start">
       {% block mainContent %}
         {% cache %}
-          <h1 class="main-heading">{{ pageHeading }}</h1>
           <div class="default-content">
-            {% include '_partials/contentBuilder' with {contentField: entry.mainContent, blocksDir: 'mainContent'} %}
+            <div class="container">
+              {% include '_partials/contentBuilder' with {contentField: entry.mainContent, blocksDir: 'mainContent'} %}
+            </div>
           </div>
         {% endcache %}
       {% endblock %}
     </div>
-
-    {% if showSidebar is defined and showSidebar %}
-      <div id="sidebar" class="hidden w-[280px] flex-shrink-0 md:block">
-        {% block subNav %}
-          {% include '_partials/nav/sub' %}
-        {% endblock %}
-
-        {# {% block sidebarContent %}
-          {% cache %}
-            {% include '_partials/contentBuilder' with {contentField: entry.sidebarContent, blocksDir: 'sidebarContent'} %}
-          {% endcache %}
-        {% endblock %} #}
-      </div>
-    {% endif %}
   </div>
 </div>

@@ -1,0 +1,19 @@
+<div class="hero-section">
+  <div class="container">
+    <div class="hero">
+      <div class="hero-info">
+        <h1>{{ pageHeading }}</h1>
+        <p>{{ entry.kratkyPopis }}</p>
+        <div class="btn-wrap side-by-side">
+          <a href="#start" class="btn start-btn">Čítaj viac</a>
+        </div>
+        <div class="btn-wrap side-by-side">
+          <a href="{{ entry.shopUrl }}" target="_blank" class="btn shop">eShop</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="{{ entry.obrazok.one.url('heroImages') }}" alt="{{ entry.title }}">
+      </div>
+    </div>
+  </div>
+</div>

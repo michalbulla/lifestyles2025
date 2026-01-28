@@ -1,18 +1,32 @@
-<div id="page-wrap">
+<div class="page-wrap">
   {% block headerContent %}
     {% include '_partials/header' %}
+  {% endblock %}
+
+  {% block hero %}
+    {% include "_partials/hero" %}
   {% endblock %}
 
   {% block subNavMobile %}
     {% include '_partials/nav/subMobile' %}
   {% endblock %}
 
-  <div class="px-4 xl:px-0 xl:container">
-    {% block contentLayout %}
-      {% embed '_layouts/content/default' %}
-      {% endembed %}
-    {% endblock %}
-  </div>
+  {% block intro %}
+    {% include "_partials/intro" %}
+  {% endblock %}
+
+  {% block advantages %}
+    {% include "_partials/advantages" %}
+  {% endblock %}
+
+  {% block ingredients %}
+    {% include "_partials/ingredients" %}
+  {% endblock %}
+
+  {% block contentLayout %}
+    {% embed '_layouts/content/default' %}
+    {% endembed %}
+  {% endblock %}
 </div>
 {% block footerContent %}
   {% include '_partials/footer' %}

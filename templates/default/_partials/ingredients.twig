@@ -1,0 +1,16 @@
+{% if entry.zlozenie %}
+  <section class="ingredients-section">
+    <div class="container">
+      <h2>Zloženie</h2>
+      <div class="ingredients">
+        {% for ingredient in entry.zlozenie %}
+          <div class="ingredient">
+            <img class="img-thumbnail" src="{{ ingredient.obrazok.one.url() }}" alt="{{ ingredient.nazov }}">
+            <h3>{{ ingredient.nazov }}</h3>
+            {{ ingredient.popis }}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}

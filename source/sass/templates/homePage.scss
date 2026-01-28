@@ -1,0 +1,275 @@
+// Home Page (index.twig) =====================================================
+
+
+.home-page {
+  header {
+    height: 100vh;
+    background-image: url('https://d3nj0prehwupew.cloudfront.net/images/header-bg.jpg?mtime=20210413063711&focal=none)');
+    background-position: center;
+    background-size: cover;
+
+    @media #{$mobile} {
+      height: auto;
+    }
+  }
+
+  .header-overlay {
+    height: 100%;
+    background-color: rgba(0, 0, 0, .4);
+
+    .start-btn {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #fff;
+      font-size: 3em;
+      padding: .1em .5em;
+      padding: .15em .5em;
+      border-radius: 50%;
+      margin-bottom: .5em;
+
+      @media #{$mobile} {
+        display: none;
+      }
+
+      &:hover,
+      &:focus {
+        color: $color-brand-one;
+      }
+    }
+  }
+
+  .main-nav >ul > li > a {
+    color: $color-white;
+
+    &:hover {
+      text-shadow: 0 0 12px $color-white;
+    }
+  }
+
+  .logo {
+    .logo-subpage {
+      display: none;
+    }
+
+    .logo-homepage {
+      display: block;
+    }
+  }
+
+  .page {
+    padding-top: 0;
+  }
+
+  .intro-section {
+    background-color: $color-white;
+  }
+
+  .intro-section .intro {
+    text-align: center;
+    padding: 2em 5em;
+
+    @media #{$mobile} {
+      padding: 2em 0;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    p,ul {
+
+    }
+  }
+}
+
+
+.carousel-wrap {
+  @media #{$not-mobile} {
+    margin-top: -19px;
+  }
+}
+
+.hp-swiper {
+  width: 90vw;
+  height: 65vh;
+
+  @media #{$mobile} {
+    height: auto;
+  }
+
+  @media #{$small-mobile} {
+    height: auto;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    background: none;
+
+    @media #{$mobile} {
+      display: none;
+    }
+
+    &:after {
+      font-family: 'FontAwesome';
+      color: $color-white;
+      font-size: 2.5em;
+      font-weight: light;
+      text-shadow: 0 0 5px rgba(#000, .7);
+    }
+  }
+
+  .swiper-button-prev:after {
+    content: '\f104';
+    font-size: 3.5em;
+  }
+
+  .swiper-button-next:after {
+    content: '\f105';
+    font-size: 3.5em;
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7em;
+
+    @media #{$tablet} {
+      padding: 0 3em;
+    }
+
+    @media #{$mobile} {
+      padding: 0;
+    }
+
+    @media #{$mobile} {
+      flex-direction: column;
+    }
+
+    img {
+      max-height: 480px;
+
+      @media #{$mobile} {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .nadpis {
+    width: 80%;
+    padding: 1em 4em 1em 2em;
+    color: $color-white;
+    text-decoration: none;
+
+    @media #{$tablet} {
+      padding: 1em 2em;
+    }
+
+    @media #{$mobile} {
+      padding: 1em 1em 1em 0;
+      padding-right: 0;
+      width: 100%;
+    }
+
+    @media #{$small-mobile} {
+      text-align: center;
+    }
+
+    h2 {
+      @include font-secondary();
+      font-size: 4em;
+      color: $color-white;
+      margin: 0;
+      margin-bottom: .3em;
+
+      @media #{$mobile} {
+        font-size: 3em;
+      }
+
+      @media #{$small-mobile} {
+        font-size: 2em;
+        margin-bottom: 1em;
+      }
+    }
+
+    p {
+      font-size: 1.3em;
+      line-height: 1.6;
+      color: $color-white;
+      margin-bottom: 1.5em;
+
+      @media #{$small-mobile} {
+        display: none;
+      }
+    }
+
+    .btn-wrap {
+      // background-color: $color-white;
+      // border-color: $color-brand-one;
+      // color: $color-brand-one;
+      @media #{$small-mobile} {
+        justify-content: center;
+      }
+    }
+  }
+
+  .obrazok {
+    @media #{$mobile} {
+      width: 55%;
+      order: -1;
+    }
+
+    @media #{$small-mobile} {
+      width: 50%;
+    }
+  }
+
+  .swiper-pagination {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    left: auto;
+    width: auto;
+  }
+
+  .swiper-pagination-bullet {
+    border: 1px solid #4A4A4A;
+    background: none;
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #4A4A4A;
+  }
+}
+
+.overview {
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%),  url(/img/bg-image-r.jpg);
+  background-size: 100%;
+  background-position: top 40% center;
+
+  @media #{$mobile} {
+    padding-top: 2em;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .lead-text {
+    @media #{$not-mobile} {
+      padding: 3em 5em 1em;
+    }
+
+    p {
+      color: $color-white;
+      text-align: center;
+      text-shadow: 1px 1px 3px rgba(#000, .8);
+      line-height: 1.55em;
+      font-size: 1.3em;
+    }
+  }
+}
+

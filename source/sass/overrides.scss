@@ -1,0 +1,553 @@
+/* ----------------------------------------------------------------------------
+********************************      TYPOGRAPHY      *************************
+-----------------------------------------------------------------------------*/
+
+// Content --------------------------------------------------------------------
+
+.main-content p,
+.main-content ul {
+  font-size: 1.2em;
+}
+
+.main-content p {
+  line-height: 1.5;
+
+  strong {
+    color: #444;
+  }
+}
+
+h1 {
+  @include font-secondary();
+  font-size: 3em;
+  color: $color-brand-two;
+  margin-bottom: .6em;
+
+  @media #{$mobile} {
+    font-size: 2em;
+  }
+}
+
+h2 {
+  @include font-headings();
+  font-size: 2em;
+  color: $color-brand-one;
+  margin-top: .8em;
+  font-weight: bold;
+
+  @media #{$mobile} {
+    font-size: 1.5em;
+  }
+}
+
+h2 a {
+  color: $color-brand-one;
+  text-decoration: none;
+  transition: all .3s;
+}
+
+h2 a:hover {
+  color: $color-brand-one;
+  text-shadow: 0 0 3px $color-brand-one;
+}
+
+h1 + h2 {
+  margin-top: .5em;
+}
+
+h3 {
+  @include font-headings();
+  font-size: 1.5em;
+  color: #666;
+  text-transform: none;
+  font-weight: bold;
+}
+
+.main-content ol,
+.main-content ul {
+  padding-left: 1em;
+  margin: 0 0 1em;
+
+  li {
+    margin: .4em 0;
+  }
+}
+
+.text-section {
+  padding: 1em 0;
+}
+
+.quote-section {
+  background-color: $color-white;
+  padding: 3em 0 1.5em;
+  margin-bottom: 2em;
+
+  p {
+    @include font-secondary;
+    font-size: 1.5em;
+    line-height: 1.4;
+    color: $color-brand-one;
+    text-align: center;
+    padding: 0 2.5em;
+    font-style: italic;
+
+    @media #{$mobile} {
+      padding: 0;
+    }
+
+    &:before {
+      content: "\201C";
+    }
+
+    &:after {
+      content: "\201D";
+    }
+  }
+}
+
+// Footer ---------------------------------------------------------------------
+
+footer {
+  p {
+    color: $color-white;
+  }
+
+  ul {
+    margin-top: 0;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+********************************      BASE      *******************************
+-----------------------------------------------------------------------------*/
+
+
+// Buttons --------------------------------------------------------------------
+
+.btn {
+  @include font-secondary();
+  font-weight: 600;
+  margin-bottom: 1.4em;
+  color: $color-brand-two;
+  border-radius: 24px;
+  text-transform: uppercase;
+  font-size: 1.05em;
+  // box-shadow: 0 0 3px rgba(0, 0, 0, .6);
+  border: 3px solid $color-brand-two;
+  // background-color: $color-brand-two;
+  transition: .5s;
+  padding: .8em 1.4em;
+
+  &:hover {
+    color: $color-white;
+    background-color: $color-brand-two;
+  }
+
+  &.shop {
+    background-color: $color-brand-two;
+    color: $color-white;
+  }
+}
+
+// Gallery Swiper -----------------------------------------------------------
+
+.gallery-swiper {
+  .swiper-caption {
+    background-color: #666;
+    color: #fff;
+    font-style: italic;
+  }
+}
+
+// Images ---------------------------------------------------------------------
+
+.image {
+  &.right {
+    margin: 15px 0 15px 20px;
+  }
+
+  &.center {
+    margin: 20px auto;
+  }
+
+  &.left {
+    margin: 5px 20px 10px 0;
+  }
+
+  @media #{$mobile} {
+    &.left,
+    &.center,
+    &.right {
+      padding-bottom: 0;
+    }
+  }
+
+  p.caption {
+    color: #666;
+    margin-top: 5px;
+  }
+}
+
+.img-thumbnail {
+  padding: 1px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.35);
+  border-radius: 0;
+  border: 0;
+}
+
+.img-responsive {
+  @media #{$mobile} {
+    margin: 0 auto !important;
+  }
+}
+
+.sidebar {
+  .image {
+    margin: 15px 0;
+  }
+}
+
+// Divider --------------------------------------------------------------------
+
+// .divider {
+//   hr {
+//     border-top: 1px solid $color-divider;
+//   }
+// }
+
+// blockquote {
+//   border-left: 5px solid lighten($color-quote, 27%);
+
+//   .quote {
+//     font-size: 1.25em;
+//   }
+
+//   .quote-author {
+//     color:;
+//   }
+// }
+
+/* ----------------------------------------------------------------------------
+********************************      NAVIGATION      *************************
+-----------------------------------------------------------------------------*/
+
+// Crumbs ---------------------------------------------------------------------
+
+.crumbs {
+  font-size: .8em;
+  margin: 2em 0;
+
+  li {
+    color: lighten($color-text, 10%);
+
+    &:after {
+      content: ">";
+    }
+
+    a {
+      color: lighten($color-text, 10%);
+    }
+  }
+}
+
+// Top ------------------------------------------------------------------------
+
+.top-nav {
+  ul {
+    @include inline-nav(
+      $separator: '|',
+      $separator-padding: 0 .4em
+    );
+
+    li a {
+      // font-size: ;
+      // color: ;
+
+      &:hover {
+        // color: ;
+      }
+    }
+
+    li.active a {
+      // color: ;
+    }
+  }
+}
+
+// Main ----------------------------------------------------------------------
+
+.main-nav {
+  text-align: right;
+
+  @media #{$mobile} {
+    text-align: left;
+    padding: 2em 0 1em;
+    top: -400px;
+    width: 100%;
+
+    &.open {
+      top: 110px;
+      background-color: rgba(0, 0, 0, .7);
+      padding-top: 1em;
+    }
+  }
+
+  > ul {
+    @media #{$not-mobile} {
+      display: inline-block;
+    }
+
+    > li {
+      padding: 0;
+
+      > a {
+        @include font-secondary();
+        font-weight: 600;
+        color: #1b1b1b;
+        text-transform: uppercase;
+        font-size: .95em;
+        padding: .6em 1.1em;
+        transition: .4s;
+
+        @media #{$mobile} {
+          padding: .6em 1em;
+          font-size: 1.05em;
+          color: $color-white;
+        }
+
+        &:hover,
+        &:focus {
+          @media #{$not-mobile} {
+            color: $color-brand-two;
+          }
+        }
+      }
+
+      &.active > a,
+      &.open > a {
+        color: $color-brand-two;
+      }
+
+      &.open > a {
+        background-color: $color-brand-two;
+      }
+    }
+  }
+}
+
+.main-nav-toggle {
+  color: $color-brand-two;
+  padding: 0 0 0 .5em;
+  margin: .35em 0;
+  font-size: 1.7em;
+  border-left: 1px solid rgba($color-brand-two, .5);
+  z-index: 150;
+}
+
+.home-page .main-nav-toggle {
+  color: $color-white;
+  border-left: 1px solid rgba($color-white, .5);
+}
+
+
+// Dropdown -------------------------------------------------------------------
+
+.main-nav > ul > li > ul.dropdownMenu {
+  box-shadow: 0 3px 3px rgba(0, 0, 0, .3);
+  width: 250px;
+  background-color: $color-white;
+  border-radius: 0;
+  padding: .3em 0;
+  left: 0;
+
+  > li {
+    padding: 0 1em;
+    > a {
+      font-size: 1.05em;
+      text-align: left;
+      color: $color-brand-one;
+      padding: .4em 0;
+      text-indent: -.75em;
+      padding-left: .75em;
+
+      &:hover {
+        color: lighten($color-brand-two, 10%);
+      }
+    }
+  }
+}
+
+
+// Sub -------------------------------------------------------------
+
+.sub-nav {
+  background-color: rgba($color-brand-one, .3);
+  border-radius: 5px;
+  padding: 1em;
+  
+  h2 {
+    font-size: 1.25em;
+    font-weight: bold;
+  }
+
+  ul {
+    margin-top: .1em;
+
+    li {
+
+      a {
+        color: $color-text;
+        font-size: .95em;
+        display: inline-block;
+        text-indent: -.75em;
+        padding-left: .75em;
+
+        &:before {
+          content: '\2022\00a0';
+        }
+
+        &:hover {
+          
+        }
+      }
+
+      &.active a,
+      &.active::before {
+      }
+    }
+  }
+}
+
+// Sub Mobile -------------------------------------------------------------
+
+.sub-nav-mobile {
+  background-color: rgba($color-brand-one, .15);
+
+  .panel-heading {
+    h2 i {
+      margin-right: .3em;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      border-bottom: 1px solid rgba($color-brand-one, .2);
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      a {
+        color: $color-brand-two;
+        display: block;
+        font-size: 16px;
+        padding: 10px 0;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &.active a {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+
+/* ----------------------------------------------------------------------------
+********************************      SHARED      *****************************
+-----------------------------------------------------------------------------*/
+
+// Add your shared overrides here
+
+.grid {
+  @media #{$not-mobile} {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1% 2em;
+  }
+
+  .grid-block {
+    text-align: center; 
+
+    @media #{$not-mobile} {
+      flex: 0 0 31%;
+      margin: 0 1% 1.5em;
+    }
+
+    .grid-image {
+
+      img {
+        transition: all .3s;
+      }
+    }
+    
+
+    h2 {
+      font-size: 1.8em;
+      margin-top: .4em;
+    }
+  }
+}
+
+.list {
+  .list-item {
+    display: flex;
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+    border-bottom: 1px solid rgba($color-brand-one, .15);
+
+    @media #{$mobile} {
+      display: block;
+    }
+
+    &:last-child {
+      border: 0;
+    }
+
+    .list-image {
+      flex: 0 0 30%;
+      text-align: center;
+      padding-top: 3em;
+    }
+  }
+}
+
+// EMBED VIDEOS
+
+.fitVids-wrapper {
+  @apply mb-6 relative pb-[56.25%] h-0;
+}
+
+.fitVids-wrapper iframe {
+  @apply absolute top-0 left-0 w-full h-full;
+}
+
+// Signature ------------------------------------------------------------------
+
+.signature {
+  // Uncomment below to hide the signature
+  // display: none;
+  a {
+    // Uncomment below to use a light version of the signature image
+    // background-image: url('https://nlc-helpers.s3.amazonaws.com/tcg-signature-light.png');
+  }
+}
+
+
+/* ----------------------------------------------------------------------------
+********************************      PRINT      ******************************
+-----------------------------------------------------------------------------*/
+
+// Add your print overrides here
+
+
+
+

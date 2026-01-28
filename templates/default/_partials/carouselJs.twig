@@ -1,0 +1,16 @@
+{% js %}
+  $(document).ready(function () {
+    //initialize swiper when document ready
+    var mySwiper = new Swiper ('.swiper-container', {
+      speed: 900,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+      loop: true,
+      autoplay: {{ entry.carouselInterval * 1000 }},
+    })
+  });
+{% endjs %}

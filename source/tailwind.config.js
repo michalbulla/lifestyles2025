@@ -4,8 +4,8 @@ module.exports = {
   content: ['./templates/**/*.twig'],
   theme: {
     fontFamily: {
-      primary: ['ui-sans-serif', 'sans-serif'],
-      //   secondary: ['ui-sans-serif', 'sans-serif'],
+      primary: ['Open Sans', 'sans-serif'],
+      secondary: ['Montserrat', 'sans-serif'],
     },
     screens: {
       sm: '450px',
@@ -25,13 +25,15 @@ module.exports = {
       colors: {
         brand: {
           // put the custom site color here
-          blue: colors.blue[500],
+          'one': '#0a6108',
+          'two': '#AFB924',
+          'three': '#2B7E29',
         },
         content: {
-          'text': colors.gray[600],
-          'link': colors.blue[700],
-          'h2': colors.gray[600],
-          'h3': colors.gray[600],
+          'text': '#666666',
+          'link': '#4e93d8',
+          'h2': '#0a6108',
+          'h3': '#666666',
           'h4': colors.gray[600],
           'divider': colors.gray[300],
           image: {
@@ -39,12 +41,12 @@ module.exports = {
             'ring': colors.gray[300],
           },
           table: {
-            'heading': colors.gray[800],
-            'heading-bg': colors.gray[200],
-            'border': colors.gray[400],
-            'grid-row': colors.gray[300],
-            'grid-column': colors.gray[300],
-            'alt-row-bg': colors.gray[200],
+            'heading': '#fff',
+            'heading-bg': '#539052',
+            'border': '#539052',
+            'grid-row': '#539052',
+            'grid-column': '#539052',
+            'alt-row-bg': '#E6EFE6',
           },
           doc: {
             'size': colors.gray[700],
